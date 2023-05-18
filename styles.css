@@ -17,17 +17,17 @@ html {
    line-height: 1.5;
 }
 
-html:focus-within{
+html:focus-within {
    scroll-behavior: smooth;
 }
 
-h1{
+h1 {
    font-size: 4rem;
 }
 
-#background-video {
+.background-video {
    min-width: 100vw;
-   min-height: 100vh;   
+   min-height: 100vh;
    object-fit: cover;
    position: fixed;
    left: 0;
@@ -48,7 +48,7 @@ h1{
 }
 
 .logo {
-   padding-left: 1rem;
+   padding-left: 1.4rem;
    padding-top: 1rem;
 }
 
@@ -96,12 +96,37 @@ h1{
    background-size: cover;
    background-repeat: no-repeat;
    background-attachment: fixed;
-   padding: 5rem;
    display: flex;
    align-items: center;
    justify-content: center;
    position: relative;
-   
+}
+
+.contact-container {
+   min-width: 100%;
+   min-height: 100vh;
+   background-color: black;
+   padding-top: 10rem;
+}
+
+.title {
+   width: 100%;
+   height: 200px;
+   background-image: url('./assets/background/MassEffectLegendaryEdition_Texture-5.jpg');
+   background-position: center;
+   background-size: contain;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.title h1 {
+   text-align: center;
+   font-family: var(--default-font);
+   font-size: 8rem;
+   font-weight: var(--default-font-bold);
+   color: var(--default-font-color);
+   text-transform: uppercase;
 }
 
 .intro-trailer {
@@ -109,12 +134,33 @@ h1{
    width: 100%;
    height: auto;
    flex-direction: column;
+   justify-content: center;
 }
 
+
 .intro-trailer iframe {
+   margin-top: 5rem;
    aspect-ratio: 16/9;
-   height: 100%;
+   height: auto;
    width: 100%;
+}
+
+.intro {
+   position: relative;
+   background-color: rgba(0, 0, 0, 0.7);
+}
+
+.intro::before {
+   content: "";
+   position: absolute;
+   width: 100%;
+   min-height: 100%;
+   background-position: center center;
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+   background-image: url('./mass-effect-banner.jpg');
+   filter: blur(5px);
 }
 
 .me-content {
@@ -122,26 +168,40 @@ h1{
    position: relative;
 }
 
-.sheppard-bio{
-   width: 100rem;  
-   height: auto; 
-   margin-top: 15rem;  
+.sheppard {
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+   position: relative;
 }
 
-.sheppard p{
-   background: rgba(0,0,0,0.5);
+.sheppard-bio {
+   position: absolute;
+   width: 100rem;
+   height: auto;
+   margin-top: 15rem;
+}
+
+.sheppard img {
+   width: 100vw;
+   height: auto;
+}
+
+.sheppard p {
+   background: rgba(0, 0, 0, 0.8);
    backdrop-filter: blur(5px);
-   border: 0.2rem solid #fff;
-   border-radius: 5px;
-   padding: 1rem;
-   font-size: 2rem;
+   border: 0.4rem solid #fff;
+   border-radius: 10px;
+   padding: 2rem;
+   font-size: 2.2rem;
    font-family: var(--default-font);
    color: var(--default-font-color);
    text-align: justify;
    font-weight: 500;
+   line-height: 2;
 }
 
-.crew-container {     
+.crew-container {
    min-height: 100vh;
    position: relative;
    padding: 5rem;
@@ -213,7 +273,7 @@ h1{
 }
 
 .crew-text h1 {
-   text-align: right;   
+   text-align: right;
    margin-left: 6.5rem;
 }
 
@@ -224,30 +284,8 @@ h1{
    text-align: justify;
 }
 
-.intro {
-   position: relative;
-   background-color: rgba(0, 0, 0, 0.7);
-}
-
-.intro::before {
-   content: "";
-   position: absolute;
-   width: 100%;
-   height: 100vh;
-   background-position: center center;
-   background-size: cover;
-   background-repeat: no-repeat;
-   background-attachment: fixed;
-   background-image: url('./mass-effect-banner.jpg');
-   filter: blur(5px);
-}
-
-.sheppard{
-   background-image: url('./assets/background/MassEffectLegendaryEdition_Texture-1.jpg');
-}
-
-.dark-bg{
-   background-color: rgba(0, 0, 0, 0.5);
+.dark-bg {
+   background-color: rgba(0, 0, 0, 1);
 }
 
 .footer {
@@ -266,9 +304,9 @@ h1{
    color: red;
 }
 
-@media (max-width: 1400px){
+@media (max-width: 1400px) {
    .grid {
-      grid-template-columns: repeat(3, 1fr);      
+      grid-template-columns: repeat(3, 1fr);
    }
-   
+
 }
