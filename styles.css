@@ -8,6 +8,7 @@
    margin: 0;
    padding: 0;
    box-sizing: border-box;
+   max-width: 100%;
 }
 
 html {
@@ -16,9 +17,17 @@ html {
    line-height: 1.5;
 }
 
+html:focus-within{
+   scroll-behavior: smooth;
+}
+
+h1{
+   font-size: 4rem;
+}
+
 #background-video {
-   width: 100vw;
-   height: 100vh;
+   min-width: 100vw;
+   min-height: 100vh;   
    object-fit: cover;
    position: fixed;
    left: 0;
@@ -33,13 +42,12 @@ html {
    position: fixed;
    display: flex;
    align-items: center;
-   width: 100%;
+   min-width: 100%;
    z-index: 2;
    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .logo {
-
    padding-left: 1rem;
    padding-top: 1rem;
 }
@@ -82,8 +90,8 @@ html {
 }
 
 .main-container {
-   width: 100%;
-   height: 100vh;
+   min-width: 100%;
+   min-height: 100vh;
    background-position: center center;
    background-size: cover;
    background-repeat: no-repeat;
@@ -93,11 +101,12 @@ html {
    align-items: center;
    justify-content: center;
    position: relative;
+   
 }
 
 .intro-trailer {
    display: flex;
-   width: 70%;
+   width: 100%;
    height: auto;
    flex-direction: column;
 }
@@ -113,23 +122,26 @@ html {
    position: relative;
 }
 
-.me-content img {
-   display: block;
-   width: 65%;
-   margin: 0 auto;
-   padding-bottom: 3rem;
+.sheppard-bio{
+   width: 100rem;  
+   height: auto; 
+   margin-top: 15rem;  
 }
 
-.me-content p {
-   max-width: 115rem;
-   margin: 0 auto;
-   text-align: justify;
+.sheppard p{
+   background: rgba(0,0,0,0.5);
+   backdrop-filter: blur(5px);
+   border: 0.2rem solid #fff;
+   border-radius: 5px;
+   padding: 1rem;
+   font-size: 2rem;
    font-family: var(--default-font);
    color: var(--default-font-color);
-   font-size: 3rem;
+   text-align: justify;
+   font-weight: 500;
 }
 
-.crew-container {
+.crew-container {     
    min-height: 100vh;
    position: relative;
    padding: 5rem;
@@ -201,9 +213,10 @@ html {
 }
 
 .crew-text h1 {
-   text-align: center;
-   margin-bottom: 2.5rem;
+   text-align: right;   
+   margin-left: 6.5rem;
 }
+
 
 .crew-text span {
    display: block;
@@ -229,16 +242,12 @@ html {
    filter: blur(5px);
 }
 
-.me1 {
-   background-image: url('./assets/galaxy-me1.jpg');
+.sheppard{
+   background-image: url('./assets/background/MassEffectLegendaryEdition_Texture-1.jpg');
 }
 
-.me2 {
-   background-image: url('./assets/galaxy-me2.png');
-}
-
-.me3 {
-   background-image: url('./assets/galaxy-me3.jpg');
+.dark-bg{
+   background-color: rgba(0, 0, 0, 0.5);
 }
 
 .footer {
@@ -255,4 +264,11 @@ html {
 
 .footer span {
    color: red;
+}
+
+@media (max-width: 1400px){
+   .grid {
+      grid-template-columns: repeat(3, 1fr);      
+   }
+   
 }
