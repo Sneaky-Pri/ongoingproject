@@ -1,6 +1,8 @@
 :root {
-   --default-font-color: #fff;
+   --default-color: #fff;
+   --default-bg-color: #000;
    --default-font: 'Rajdhani', sans-serif;
+   --default-title-font: 'Orbitron', sans-serif;
    --default-font-bold: 700;
 }
 
@@ -65,8 +67,8 @@ h1 {
    display: block;
    position: relative;
    text-decoration: none;
-   color: var(--default-font-color);
-   font-family: var(--default-font);
+   color: var(--default-color);
+   font-family: var(--default-title-font);
    font-weight: var(--default-font-bold);
    padding: 1rem 3rem;
    font-size: 2rem;
@@ -102,33 +104,6 @@ h1 {
    position: relative;
 }
 
-.contact-container {
-   min-width: 100%;
-   min-height: 100vh;
-   background-color: black;
-   padding-top: 10rem;
-}
-
-.title {
-   width: 100%;
-   height: 200px;
-   background-image: url('./assets/background/MassEffectLegendaryEdition_Texture-5.jpg');
-   background-position: center;
-   background-size: contain;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-}
-
-.title h1 {
-   text-align: center;
-   font-family: var(--default-font);
-   font-size: 8rem;
-   font-weight: var(--default-font-bold);
-   color: var(--default-font-color);
-   text-transform: uppercase;
-}
-
 .intro-trailer {
    display: flex;
    width: 100%;
@@ -155,12 +130,6 @@ h1 {
    position: absolute;
    width: 100%;
    min-height: 100%;
-   background-position: center center;
-   background-size: cover;
-   background-repeat: no-repeat;
-   background-attachment: fixed;
-   background-image: url('./mass-effect-banner.jpg');
-   filter: blur(5px);
 }
 
 .me-content {
@@ -173,6 +142,8 @@ h1 {
    justify-content: center;
    flex-direction: column;
    position: relative;
+   background-color: rgba(0, 0, 0, 0.5);
+   backdrop-filter: blur(2px);
 }
 
 .sheppard-bio {
@@ -188,16 +159,15 @@ h1 {
 }
 
 .sheppard p {
-   background: rgba(0, 0, 0, 0.8);
+   background: rgba(0, 0, 0, 0.5);
    backdrop-filter: blur(5px);
-   border: 0.4rem solid #fff;
-   border-radius: 10px;
+   border: 0.2rem solid var(--default-color);
+   border-radius: 5px;
    padding: 2rem;
    font-size: 2.2rem;
    font-family: var(--default-font);
-   color: var(--default-font-color);
+   color: var(--default-color);
    text-align: justify;
-   font-weight: 500;
    line-height: 2;
 }
 
@@ -208,20 +178,71 @@ h1 {
    display: flex;
    justify-content: center;
    align-items: center;
+   background-color: var(--default-bg-color);
 }
 
 
-.grid {
-   padding: 3rem 20rem;
-   display: grid;
-   justify-content: center;
-   align-items: center;
-   grid-template-columns: repeat(4, 1fr);
-   gap: 3rem;
+.container {
+   position: relative;
+   padding: 10px 20px;
+   max-width: 1700px;
+   min-width: 500px;
+   margin: 0 auto;
+}
+
+.arrow-left,
+.arrow-right {
+   position: absolute;
+   bottom: 0;
+   font-size: 40px;
+   width: 40px;
+   cursor: pointer;
+   border: none;
+   background: linear-gradient(to left, transparent 0%, blue 200%);
+   z-index: 2;
+}
+
+.arrow-left {
+   left: -15px;
+   right: auto;
+   border-top-left-radius: 10px;
+   border-bottom-left-radius: 10px;
+   color: blue;
+}
+
+.arrow-right {
+   left: auto;
+   right: -15px;
+   border-top-right-radius: 10px;
+   border-bottom-right-radius: 10px;
+   background: linear-gradient(to right, transparent 0%, red 200%);
+   color: red;
+}
+
+
+.gallery-wrapper {
+   background-color: black;
+   overflow-x: auto;
+   scrollbar-width: thin;
+   scrollbar-color: #444 black;
+}
+
+.gallery {
+   display: flex;
+   flex-flow: row nowrap;
+   gap: 20px;
+}
+
+.item {
+   width: 400px;
+   height: 450px;
+   flex-shrink: 0;
+   transition: all 300ms ease-in-out;
 }
 
 .box {
    display: flex;
+   flex-direction: column;
 }
 
 .box_content {
@@ -262,31 +283,135 @@ h1 {
    transform: rotateX(180deg);
 }
 
-.crew-text {
+.crew-text-container {
    position: absolute;
-   display: block;
-   top: 2rem;
-   left: 2.5rem;
+   display: flex;
+   flex-direction: column;
    width: 35rem;
    font-family: var(--default-font);
    font-size: 1.8rem;
-}
-
-.crew-text h1 {
-   text-align: right;
-   margin-left: 6.5rem;
-}
-
-
-.crew-text span {
-   display: block;
-   margin-top: 0.5rem;
    text-align: justify;
 }
 
-.dark-bg {
-   background-color: rgba(0, 0, 0, 1);
+.crew-info {
+   display: flex;
+   justify-content: flex-start;
+   align-items: baseline;
+   margin-left: 8rem;
+   column-gap: 1rem;
 }
+
+.crew-bio {
+   margin-top: 2rem;
+}
+
+.crew-member h1 {
+   color: var(--default-color);
+   text-align: center;
+   font-family: var(--default-title-font);
+   text-transform: uppercase;
+   font-size: 3rem;
+}
+
+.contact-container {
+   min-width: 100%;
+   min-height: 100vh;
+   background-color: var(--default-bg-color);
+   padding-top: 10rem;
+}
+
+.contact-title {
+   width: 100%;
+   height: 150px;
+   background-image: url('./assets/background/MassEffectLegendaryEdition_Texture-5.jpg');
+   background-position: center;
+   background-size: contain;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.contact-title h1 {
+   text-align: center;
+   font-family: var(--default-title-font);
+   font-size: 8rem;
+   font-weight: var(--default-font-bold);
+   color: var(--default-color);
+   text-transform: uppercase;
+}
+
+.contact-form {
+   grid-column: span 2;
+   max-width: 120rem;
+   margin: 0 auto;
+   padding-top: 2.5rem;
+}
+
+.contact-form .form-grid {
+   border: none;
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   gap: 3rem;
+}
+
+.form-grid legend {
+   font-style: italic;
+   font-size: 1.6rem;
+   margin-bottom: 3rem;
+   color: var(--default-color);
+}
+
+.form-group {
+   flex: 1 1 auto;
+}
+
+.form-group label {
+   display: block;
+}
+
+.form-group input,
+.form-group textarea {
+   border: 0.2rem solid var(--default-color);
+   background-color: black;
+   padding: 1.5rem 2rem;
+   width: 100%;
+   font-size: 2.5rem;
+   outline: none;
+   color: var(--default-color);
+   font-family: var(--default-font);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+   box-shadow: 0px 0px 10px 2px #fff;
+   color: #fff;
+
+}
+
+.form-group button {
+   border: none;
+   background: red;
+   color: #fff;
+   padding: 1.5rem 2rem;
+   font-size: 3rem;
+   cursor: pointer;
+   transition: all 300ms ease-in-out;
+   font-family: var(--default-font);
+}
+
+.full-width {
+   width: 100%;
+}
+
+.form-group button:hover {
+   transform: scale(1.1);
+}
+
+.form-group ::placeholder {
+   color: #888;
+}
+
 
 .footer {
    background-color: black;
@@ -296,17 +421,10 @@ h1 {
 
 .footer p {
    font-family: var(--default-font);
-   color: var(--default-font-color);
+   color: var(--default-color);
    font-size: 1.5rem;
 }
 
 .footer span {
    color: red;
-}
-
-@media (max-width: 1400px) {
-   .grid {
-      grid-template-columns: repeat(3, 1fr);
-   }
-
 }
