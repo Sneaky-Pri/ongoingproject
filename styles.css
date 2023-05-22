@@ -219,14 +219,12 @@ h1 {
    margin: 0 auto;
 }
 
-.container-mobile {
-   display: none;
-}
-
 .crew-title {
+   max-width: 100vw;
+   margin: 0 auto;
    color: var(--default-color);
    font-family: var(--default-title-font);
-   margin: 3rem;
+   padding: 2rem;
 }
 
 .progress-container {
@@ -280,7 +278,7 @@ h1 {
 }
 
 .item {
-   width: 400px;
+   max-width: 400px;
    height: 450px;
    flex-shrink: 0;
    transition: all 300ms ease-in-out;
@@ -539,6 +537,10 @@ h1 {
       font-size: 3rem;
    }
 
+   .intro-trailer {
+      row-gap: 5rem;
+   }
+
    .shepard-bio {
       position: relative;
       margin-top: 0;
@@ -549,43 +551,79 @@ h1 {
       font-size: 1.5rem;
    }
 
-   .box_content {
-      display: flex;
-      width: 300px;
-      height: 600px;
+   .commander-shepard {
+      position: relative;
+      top: 0;
    }
 
-   .box_front,
-   .box_back,
-   .item {
-      max-width: 300px;
+   .commander-shepard h1 {
+      position: relative;
+      text-align: center;
+      padding: 2rem;
+      font-size: 3rem;
+      top: 0;
+   }
+
+   .container {
+      min-width: 30rem;
+   }
+
+   .item,
+   .box_content {
+      max-width: 30rem;
       height: auto;
    }
 
-   .crew-text-container {
-      max-width: 26rem;
-      font-size: 1.5rem;
+   .contact-title h1 {
+      font-size: 5rem;
    }
 
-   .box_back {
-      position: absolute;
-      bottom: 0;
-      backface-visibility: visible;
-      transform: rotateX(0deg);
+   .intro-trailer {
+      padding: 0;
    }
 
-   .crew-title h1 {
-      max-width: 26rem;
+   .intro-title h1,
+   .crew-title h1,
+   .crew-member h1,
+   .contact-title h1 {
       font-size: 2rem;
+   }
+
+   .crew-bio p {
+      font-size: 1.3rem;
+      max-width: 25rem;
       margin: 0 auto;
    }
 
-   .crew-member h1 {
-      font-size: 2rem;
+   .contact-container {
+      padding-top: 3rem;
+      min-height: 0;
+   }
+
+   .contact-title {
+      height: 5rem;
    }
 
    .footer {
       padding: 3rem 3rem;
+   }
+
+   .footer p {
+      font-size: 1.2rem;
+   }
+
+   .form-group input,
+   .form-group textarea {
+      font-size: 1.3rem;
+   }
+
+   .form-group button {
+      font-size: 2rem;
+   }
+
+   .button {
+      display: flex;
+      justify-content: center;
    }
 
 }
