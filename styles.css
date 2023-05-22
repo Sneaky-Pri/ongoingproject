@@ -595,9 +595,10 @@ h1 {
       margin: 0 auto;
    }
 
-   .contact-container {
-      padding-top: 3rem;
+   .contact-container,
+   .crew-container-desktop {
       min-height: 0;
+      padding: 3rem 5rem 0 5rem;
    }
 
    .contact-title {
