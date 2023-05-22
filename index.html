@@ -16,8 +16,10 @@
 </head>
 
 <body>
+   <input type="checkbox" id="close-menu" class="close-menu" aria-label="Close menu" role="button">
+   <label class="close-menu-label" for="close-menu" title="close menu"></label>
    <header class="menu">
-      <div class="logo">
+      <div onclick="getElementById('close-menu').checked=falss" class="logo">
          <a href="#home">
             <?xml version="1.0" encoding="UTF-8"?>
             <svg width="132px" height="58px" viewBox="0 0 132 58" version="1.1" xmlns="http://www.w3.org/2000/svg"
@@ -177,7 +179,7 @@
          </a>
       </div>
       <nav>
-         <ul class="menu-list">
+         <ul onclick="getElementById('close-menu').checked=false" class="menu-list">
             <li><a href="#home">Home</a></li>
             <li><a href="#intro">Legendary</a></li>
             <li><a href="#commander">Commander Sheppard</a></li>
@@ -195,17 +197,25 @@
    </section>
 
    <section id="intro" class="main-container intro">
-      <div class="me-content intro-trailer">
-         <iframe width="100%" height="100%" src="https://www.youtube.com/embed/n8i53TtQ6IQ" title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen></iframe>
+      <div class="intro-trailer">
+         <div class="intro-title">
+            <h1>Relive the legend of commander shepard</h1>
+         </div>
+         <div class="intro-video">
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/n8i53TtQ6IQ"
+               title="YouTube video player" frameborder="0"
+               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+               allowfullscreen></iframe>
+         </div>
       </div>
    </section>
 
-   <section id="commander" class="main-container sheppard">
-      <img src="./assets/background/sheppard.png" alt="sheppard image">
-      <div class="sheppard-bio me-content">
+   <section id="commander" class="main-container shepard">
+      <div class="commander-shepard">
+         <h1>commander shepard</h1>
+      </div>
+      <img src="./assets/background/sheppard.png" alt="shepard image">
+      <div class="shepard-bio me-content">
          <p>Shepard was born on April 11, 2154, is a graduate of the Systems Alliance N7 special forces program (service
             no. 5923-AC-2826), a veteran of the Skyllian Blitz, and is initially assigned to the SSV Normandy in 2183 as
             Executive Officer, with a Systems Alliance rank of Lieutenant Commander.
@@ -215,13 +225,14 @@
       </div>
    </section>
 
-   <section id="crew" class="crew-container dark-bg">
+   <section id="crew" class="crew-container-desktop dark-bg">
       <div class="container">
-         <button class="arrow-left control" aria-label="Previous image">❮</button>
-         <button class="arrow-right control" aria-label="Next image">❯</button>
+         <div class="crew-title">
+            <h1>get to know your potential crewmates</h1>
+         </div>
          <div class="gallery-wrapper">
             <div class="gallery">
-               <div class="box item current-item">
+               <div class="box item current-item ">
                   <div class="box_content">
                      <div class="box_front">
                         <img src="./assets/crew_members/garrus.png" />
@@ -255,7 +266,7 @@
                   </div>
                </div>
 
-               <div class="box item">
+               <div class="box item ">
                   <div class="box_content">
                      <div class="box_front">
                         <img src="./assets/crew_members/ashley.png" />
@@ -290,7 +301,7 @@
                   </div>
                </div>
 
-               <div class="box item">
+               <div class="box item ">
                   <div class="box_content">
                      <div class="box_front">
                         <img src="./assets/crew_members/kaidan.png" />
@@ -323,7 +334,7 @@
                   </div>
                </div>
 
-               <div class="box item">
+               <div class="box item ">
                   <div class="box_content">
                      <div class="box_front">
                         <img src="./assets/crew_members/liara.png" />
@@ -357,7 +368,7 @@
                   </div>
                </div>
 
-               <div class="box item">
+               <div class="box item ">
                   <div class="box_content">
                      <div class="box_front">
                         <img src="./assets/crew_members/miranda.png" />
@@ -390,7 +401,7 @@
                   </div>
                </div>
 
-               <div class="box item">
+               <div class="box item ">
                   <div class="box_content">
                      <div class="box_front">
                         <img src="./assets/crew_members/jacob.png" />
@@ -422,7 +433,7 @@
                   </div>
                </div>
 
-               <div class="box item">
+               <div class="box item ">
                   <div class="box_content">
                      <div class="box_front">
                         <img src="./assets/crew_members/legion.png" />
@@ -456,7 +467,7 @@
                   </div>
                </div>
 
-               <div class="box item">
+               <div class="box item ">
                   <div class="box_content">
                      <div class="box_front">
                         <img src="./assets/crew_members/jack.png" />
@@ -490,7 +501,7 @@
                   </div>
                </div>
 
-               <div class="box item">
+               <div class="box item ">
                   <div class="box_content">
                      <div class="box_front">
                         <img src="./assets/crew_members/thane.png" />
@@ -525,7 +536,7 @@
                   </div>
                </div>
 
-               <div class="box item">
+               <div class="box item ">
                   <div class="box_content">
                      <div class="box_front">
                         <img src="./assets/crew_members/kasumi.png" />
@@ -557,7 +568,7 @@
                   </div>
                </div>
 
-               <div class="box item">
+               <div class="box item ">
                   <div class="box_content">
                      <div class="box_front">
                         <img src="./assets/crew_members/mordin.png" />
@@ -590,7 +601,7 @@
                   </div>
                </div>
 
-               <div class="box item">
+               <div class="box item ">
                   <div class="box_content">
                      <div class="box_front">
                         <img src="./assets/crew_members/grunt.png" />
@@ -621,7 +632,7 @@
                   </div>
                </div>
 
-               <div class="box item">
+               <div class="box item ">
                   <div class="box_content">
                      <div class="box_front">
                         <img src="./assets/crew_members/samara.png" />
@@ -653,7 +664,7 @@
                   </div>
                </div>
 
-               <div class="box item">
+               <div class="box item ">
                   <div class="box_content">
                      <div class="box_front">
                         <img src="./assets/crew_members/edi.png" />
@@ -685,7 +696,7 @@
                   </div>
                </div>
 
-               <div class="box item">
+               <div class="box item ">
                   <div class="box_content">
                      <div class="box_front">
                         <img src="./assets/crew_members/james.png" />
@@ -718,7 +729,7 @@
                   </div>
                </div>
 
-               <div class="box item">
+               <div class="box item ">
                   <div class="box_content">
                      <div class="box_front">
                         <img src="./assets/crew_members/javik.png" />
@@ -752,7 +763,7 @@
                   </div>
                </div>
 
-               <div class="box item">
+               <div class="box item ">
                   <div class="box_content">
                      <div class="box_front">
                         <img src="./assets/crew_members/zaeed.png" />
@@ -782,7 +793,14 @@
                      <h1>Zaeed Massani</h1>
                   </div>
                </div>
-
+            </div>
+         </div>
+         <div class="progress-container">
+            <div class="progress-button">
+               <button id="left-button" class="arrow-left control" aria-label="Previous image">❮</button>
+            </div>
+            <div class="progress-button">
+               <button id="right-button" class="arrow-right control" aria-label="Next image">❯</button>
             </div>
          </div>
       </div>
@@ -823,6 +841,7 @@
          responsible for the operation of or content on this site."</p>
    </footer>
 
+   <a href="#" class="back-to-top">❮</a>
    <script src="./index.js"></script>
 </body>
 
